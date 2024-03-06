@@ -1,0 +1,34 @@
+{
+  "name": "vue-vite-starter-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "packageManager": "pnpm@8.5.1",
+  "description": "",
+  "scripts": {
+    "web": "pnpm -F @app/web",
+    "web-nuxt-wtf": "pnpm -F @app/web-nuxt/wtf",
+    "web-nuxt": "pnpm -F @app/web-nuxt",
+    "shared": "pnpm -F @jn/shared",
+    "eslint": "pnpm -F @jn/eslint-config"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
+    "@jn/eslint-config": "workspace:*",
+    "eslint": "^8.52.0",
+    "prettier": "^3.0.3",
+    "prettier-plugin-tailwindcss": "^0.5.6"
+  },
+  "pnpm": {
+    "overrides": {
+      "eslint": "$eslint",
+      "prettier": "$prettier",
+      "lodash-es": "^4.17.21",
+      "@types/lodash-es": "^4.17.10"
+    }
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "author": "",
+  "license": "ISC"
+}
