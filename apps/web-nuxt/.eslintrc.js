@@ -1,9 +1,8 @@
-require('@jn/eslint-config/patch');
 
 module.exports = {
   root: true,
 
-  extends: ['@jn/eslint-config/vue'],
+  extends: ['@jn/eslint-config/nuxt'],
 
   globals: {
     __DEV__: 'readonly',

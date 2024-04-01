@@ -6,7 +6,8 @@
   "exports": {
     ".": "./index.cjs",
     "./patch": "./patch.cjs",
-    "./vue": "./vue.cjs"
+    "./vue": "./vue.cjs",
+    "./nuxt": "./nuxt.cjs"
   },
   "dependencies": {
     "@nuxt/eslint-config": "^0.2.0",
