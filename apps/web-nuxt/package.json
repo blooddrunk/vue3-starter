@@ -43,15 +43,16 @@
   },
   "devDependencies": {
     "@element-plus/nuxt": "^1.0.7",
-    "@jn/eslint-config": "workspace:*",
     "@jn/tailwind-config": "workspace:*",
     "@nuxt/devtools": "^1.1.5",
+    "@nuxt/eslint": "0.3.0-beta.7",
     "@nuxtjs/tailwindcss": "^6.11.4",
     "@pinia/nuxt": "^0.5.1",
     "@types/lodash-es": "^4.17.10",
     "@types/node": "^20.11.25",
     "@types/nprogress": "^0.2.3",
     "@vant/nuxt": "^1.0.4",
-    "@vueuse/nuxt": "^10.9.0"
+    "@vueuse/nuxt": "^10.9.0",
+    "eslint": "*"
   }
 }
