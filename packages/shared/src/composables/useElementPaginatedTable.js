@@ -1,6 +1,6 @@
 import { computed } from 'vue';
 
-import usePaginatedList from './usePaginatedList';
+import { usePaginatedList } from './usePaginatedList';
 
 export const useElementPaginatedTable = (...args) => {
   const result = usePaginatedList(...args);

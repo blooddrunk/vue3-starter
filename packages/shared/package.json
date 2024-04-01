@@ -8,8 +8,8 @@
   },
   "sideEffects": false,
   "dependencies": {
-    "@types/lodash-es": "*",
-    "lodash-es": "*"
+    "@types/lodash-es": "^4.17.10",
+    "lodash-es": "^4.17.21"
   },
   "peerDependencies": {
     "@types/nprogress": "*",
@@ -25,11 +25,11 @@
   "devDependencies": {
     "@types/nprogress": "^0.2.3",
     "@vueuse/core": "^10.9.0",
-    "axios": "^1.6.7",
+    "axios": "^1.6.8",
     "echarts": "^5.5.0",
-    "immer": "^10.0.3",
+    "immer": "^10.0.4",
     "nprogress": "^0.2.0",
-    "vee-validate": "^4.12.5",
+    "vee-validate": "^4.12.6",
     "vue": "^3.4.21",
     "vue-echarts": "^6.6.9"
   },

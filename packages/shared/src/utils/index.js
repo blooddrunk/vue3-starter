@@ -1,4 +1,3 @@
-export * from './types';
 export * from './misc';
 export * from './math';
 export * from './axios';
