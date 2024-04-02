@@ -1,41 +1,16 @@
 <template>
   <div class="article">
-    <van-address-edit
-      :area-list="areaList"
-      :area-columns-placeholder="['请选择', '请选择', '请选择']"
-      save-button-text="确认提交"
-      detail-maxlength="50"
-      :validator="handleValidate"
-      :is-saving="isLoading"
-      @save="handleSubmit"
-    >
-      <van-field
-        :model-value="displayServiceTime"
-        readonly
-        is-link
-        placeholder="上门时间"
-        label="上门时间"
-        :rules="serviceTimeRule"
-        @click="isTimePickerVisible = true"
-      ></van-field>
+    <van-address-edit :area-list="areaList" :area-columns-placeholder="['请选择', '请选择', '请选择']" save-button-text="确认提交"
+      detail-maxlength="50" :validator="handleValidate" :is-saving="isLoading" @save="handleSubmit">
+      <van-field :model-value="displayServiceTime" readonly is-link placeholder="上门时间" label="上门时间"
+        :rules="serviceTimeRule" @click="isTimePickerVisible = true"></van-field>
     </van-address-edit>
 
-    <van-popup
-      v-model:show="isTimePickerVisible"
-      position="bottom"
-      close-on-popstate
-    >
-      <van-picker-group
-        title="上门时间"
-        :tabs="['选择日期', '选择时间']"
-        @confirm="handleServiceTimeChange"
-        @cancel="isTimePickerVisible = false"
-      >
+    <van-popup v-model:show="isTimePickerVisible" position="bottom" close-on-popstate>
+      <van-picker-group title="上门时间" :tabs="['选择日期', '选择时间']" @confirm="handleServiceTimeChange"
+        @cancel="isTimePickerVisible = false">
         <van-date-picker v-model="currentDate" :min-date="minDate" />
-        <van-time-picker
-          v-model="currentTime"
-          :columns-type="['hour', 'minute', 'second']"
-        />
+        <van-time-picker v-model="currentTime" :columns-type="['hour', 'minute', 'second']" />
       </van-picker-group>
     </van-popup>
   </div>

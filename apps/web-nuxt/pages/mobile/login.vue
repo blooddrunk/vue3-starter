@@ -90,19 +90,16 @@ definePageMeta({
 
 const authStore = useMobileAuthStore();
 
-const { values, validateField, isSubmitting, handleSubmit } =
-  useForm <
-  MobileLoginInfo >
-  {
-    validationSchema: {
-      mobile: 'required|mobile',
-      authCode: 'required|numeric|max:6',
-    },
-    initialValues: {
-      mobile: authStore.stagedLoginInfo.mobile ?? '',
-      authCode: authStore.stagedLoginInfo.authCode ?? '',
-    },
-  };
+const { values, validateField, isSubmitting, handleSubmit } = useForm({
+  validationSchema: {
+    mobile: 'required|mobile',
+    authCode: 'required|numeric|max:6',
+  },
+  initialValues: {
+    mobile: authStore.stagedLoginInfo.mobile ?? '',
+    authCode: authStore.stagedLoginInfo.authCode ?? '',
+  },
+});
 
 authStore.$patch((state) => {
   state.stagedLoginInfo.mobile = '';

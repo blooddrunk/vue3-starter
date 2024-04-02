@@ -7,10 +7,9 @@
     ".": "./index.cjs",
     "./patch": "./patch.cjs",
     "./vue": "./vue.cjs",
-    "./nuxt": "./nuxt.cjs"
+    "./prettier": "./prettier.cjs"
   },
   "dependencies": {
-    "@nuxt/eslint-config": "^0.2.0",
     "@rushstack/eslint-patch": "^1.10.1",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",

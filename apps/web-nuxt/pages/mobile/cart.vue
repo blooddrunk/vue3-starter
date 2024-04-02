@@ -21,13 +21,7 @@
       </span>
 
       <NuxtLink v-slot="{ navigate }" custom to="/mobile/order">
-        <van-button
-          class="!ml-auto min-w-28"
-          type="primary"
-          round
-          :disabled="!cart.hasCheckedItems"
-          @click="navigate"
-        >
+        <van-button class="!ml-auto min-w-28" type="primary" round :disabled="!cart.hasCheckedItems" @click="navigate">
           去结算({{ cart.checkedQuantity }})
         </van-button>
       </NuxtLink>

@@ -1,12 +1,7 @@
 <template>
   <section>
     <el-form inline @submit="handleSearch">
-      <BaseInput
-        name="query"
-        label="Query"
-        :show-label="false"
-        clearable
-      ></BaseInput>
+      <BaseInput name="query" label="Query" :show-label="false" clearable></BaseInput>
 
       <el-form-item>
         <BaseSearchButton :loading="isLoading"></BaseSearchButton>
@@ -14,11 +9,7 @@
     </el-form>
 
     <BaseDataTable class="mt-3" v-bind="elementTableProps">
-      <el-table-column
-        prop="author"
-        label="Author"
-        width="100"
-      ></el-table-column>
+      <el-table-column prop="author" label="Author" width="100"></el-table-column>
       <el-table-column prop="title" label="Title"></el-table-column>
       <el-table-column prop="url" label="Link">
         <template #default="{ row }">

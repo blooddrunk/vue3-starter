@@ -1,50 +1,29 @@
 <template>
-  <div
-    :class="[
-      $style.input,
-      wrapperClass,
-      showValidationError && 'relative mb-4',
-    ]"
-  >
-    <div
-      :class="{
-        [$style.control]: true,
-        [$style.controlActive]: isFocused,
-      }"
-    >
-      <label
-        v-if="showLabel && hasLabel"
-        :class="{ [$style.labelActive]: isLabelActive }"
-        :for="name"
-        @click="input!.focus()"
-        @touchstart.stop="input!.focus()"
-      >
+  <div :class="[
+    $style.input,
+    wrapperClass,
+    showValidationError && 'relative mb-4',
+  ]">
+    <div :class="{
+    [$style.control]: true,
+    [$style.controlActive]: isFocused,
+  }">
+      <label v-if="showLabel && hasLabel" :class="{ [$style.labelActive]: isLabelActive }" :for="name"
+        @click="input.focus()" @touchstart.stop="input.focus()">
         <slot name="label">
           <span>{{ label }}</span>
         </slot>
       </label>
 
-      <input
-        :id="name"
-        ref="input"
-        :value="value"
-        :placeholder="placeholder"
-        v-bind="$attrs"
-        @focus="handleFocus"
-        @blur="handleBlur"
-        @input="handleInput"
-        @change="handleChange"
-      />
+      <input :id="name" ref="input" :value="value" :placeholder="placeholder" v-bind="$attrs" @focus="handleFocus"
+        @blur="handleBlur" @input="handleInput" @change="handleChange" />
 
       <div v-if="$slots.append" class="ml-auto flex-shrink-0 pl-1">
         <slot name="append"></slot>
       </div>
     </div>
 
-    <p
-      v-if="showValidationError && errorMessage"
-      class="absolute left-0 top-full"
-    >
+    <p v-if="showValidationError && errorMessage" class="absolute left-0 top-full">
       <span class="px-2 text-xs font-medium leading-none text-red-500">
         <slot name="error" :error="errorMessage">
           {{ errorMessage }}
@@ -98,10 +77,12 @@ const input = ref(null);
 const slots = useSlots();
 const hasLabel = computed(() => !!(slots.label || props.label));
 
-const { listeners, errorMessage, value, meta } = useFormField({
-  name: props.name,
-  label: props.label,
-});
+const { listeners, errorMessage, value, meta } = useFormField(
+  reactive({
+    name: props.name,
+    label: props.label,
+  }),
+);
 
 const isFocused = ref(false);
 const handleFocus = () => {

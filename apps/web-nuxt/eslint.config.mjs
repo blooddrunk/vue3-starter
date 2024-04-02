@@ -1,6 +1,8 @@
+// import { FlatCompat } from '@eslint/eslintrc';
+
 import withNuxt from './.nuxt/eslint.config.mjs';
 
-console.log(withNuxt);
+// const compat = new FlatCompat();
 
 export default withNuxt({
   languageOptions: {
@@ -13,9 +15,9 @@ export default withNuxt({
   // ...Prepend some flat configs in front
   ()
   // Override some rules in a specific config, based on their name
-  .override('vue', {
+  .override('nuxt:vue', {
     rules: {
       // ...Override rules, for example:
-      'vue/max-attributes-per-line': 'off',
+      // 'vue/max-attributes-per-line': 'off',
     },
   });

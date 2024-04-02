@@ -1,24 +1,10 @@
 <template>
   <article class="article article_has-footer">
-    <van-empty
-      v-if="isItemsEmpty"
-      image="error"
-      description="出错了"
-    ></van-empty>
-    <CartList
-      v-else
-      :items="items"
-      :loading="product.isItemsLoading"
-      readonly
-    ></CartList>
+    <van-empty v-if="isItemsEmpty" image="error" description="出错了"></van-empty>
+    <CartList v-else :items="items" :loading="product.isItemsLoading" readonly></CartList>
 
     <van-cell-group class="!mx-0 !mt-6" inset>
-      <van-field
-        v-model="remarks"
-        label="订单备注"
-        maxlength="30"
-        placeholder="请填写备注信息（30字以内）"
-      ></van-field>
+      <van-field v-model="remarks" label="订单备注" maxlength="30" placeholder="请填写备注信息（30字以内）"></van-field>
 
       <van-cell title="商品金额">
         <span>
@@ -36,11 +22,7 @@
       </van-cell>
     </van-cell-group>
 
-    <van-checkbox
-      v-model="isServiceAgreementChecked"
-      class="mt-6 justify-center text-xs"
-      icon-size="16px"
-    >
+    <van-checkbox v-model="isServiceAgreementChecked" class="mt-6 justify-center text-xs" icon-size="16px">
       我已认真阅读并同意
       <NuxtLink class="text-primary" to="/mobile/service-agreement">
         《服务协议》
@@ -56,13 +38,7 @@
       </span>
 
       <NuxtLink v-slot="{ navigate }" custom to="/mobile/address">
-        <van-button
-          class="!ml-auto"
-          type="primary"
-          round
-          :disabled="!isServiceAgreementChecked"
-          @click="navigate"
-        >
+        <van-button class="!ml-auto" type="primary" round :disabled="!isServiceAgreementChecked" @click="navigate">
           订单提交
         </van-button>
       </NuxtLink>
