@@ -1,6 +1,11 @@
 <template>
-  <el-form-item :class="[{ 'is-required': required }, $attrs.class]" :label="label" :label-width="labelWidth"
-    :error="errorMessage" :validate-status="validateStatus">
+  <el-form-item
+    :class="[{ 'is-required': required }, $attrs.class]"
+    :label="label"
+    :label-width="labelWidth"
+    :error="errorMessage"
+    :validate-status="computedValidateStatus"
+  >
     <slot v-bind="fieldProps"></slot>
   </el-form-item>
 </template>
@@ -58,11 +63,11 @@ const props = defineProps({
 
 const label = props.showLabel ? props.label : undefined;
 
-const { listeners, errorMessage, value, meta } = useFormField(
-  reactivePick(props, 'name', 'label', 'mode', 'validateOnMount', 'rules'),
-);
+const { listeners, errorMessage, value, meta } = useFormField({
+  ...reactivePick(props, 'name', 'label', 'mode', 'validateOnMount', 'rules'),
+});
 
-const validateStatus = computed(() => {
+const computedValidateStatus = computed(() => {
   if (errorMessage.value) {
     return 'error';
   } else if (meta.pending) {

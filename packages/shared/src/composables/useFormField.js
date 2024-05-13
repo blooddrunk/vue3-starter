@@ -59,6 +59,8 @@ export const useFormField = (options) => {
     /** original useForm return */
     errorMessage,
     handleChange,
+    ...rest,
+
     listeners,
   };
 };
